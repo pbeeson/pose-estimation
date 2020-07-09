@@ -16,6 +16,8 @@ add_definitions(${PCL_DEFINITIONS})
 set(GCC_COVERAGE_LINK_FLAGS "-lnlopt -lm")
 add_definitions(${GCC_COVERAGE_COMPILE_FLAGS})
 
+set(CMAKE_BUILD_TYPE Release)
+
 file(GLOB SOURCES
     *.h
     *.hpp
@@ -36,4 +38,4 @@ file(GLOB SOURCES
 add_executable(${PROJECT_NAME} ${SOURCES})
 
 
-target_link_libraries(${PROJECT_NAME} ${PCL_LIBRARIES} ${OpenCV_LIBS} "/usr/local/lib/libnlopt.a")
+target_link_libraries(${PROJECT_NAME} ${PCL_LIBRARIES} ${OpenCV_LIBS} nlopt)
